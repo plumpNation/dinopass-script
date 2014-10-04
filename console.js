@@ -1,3 +1,9 @@
+/**
+ * Copy and paste this into the console
+ */
+
+var passwordCount = 60;
+
 // dinopass has jquery in the page
 var input = $('#password-input');
 var newBtn = $('#simple-button');
@@ -13,8 +19,9 @@ var getNewPassword = function () {
         passwords.push(password);
     }
 
-    if (passwords.length === 60) {
+    if (passwords.length >= passwordCount) {
         window.clearInterval(interval);
+        console.log(passwords);
     }
 
     newBtn.click();
